@@ -111,7 +111,90 @@ Crear Pull Request a main
 
 Revisar y hacer merge entre los dos
 
-📌 Tareas (para GitHub Projects o Issues)
+
+🌐 Proyecto Frontend con React
+
+📌 Descripción
+
+Frontend de una plataforma de empleo donde los usuarios pueden registrarse, iniciar sesión, ver vacantes, crear nuevas vacantes (si están autenticados), y postularse.
+
+🧠 Tecnologías sugeridas
+
+React (Vite o Create React App)
+
+React Router DOM
+
+Axios
+
+Context API o Redux (opcional)
+
+Tailwind CSS (opcional para estilos rápidos)
+
+Formik + Yup (para formularios y validaciones)
+
+📁 Estructura recomendada
+
+/src
+  /components
+  /pages
+  /services
+  /context
+  /hooks
+  /utils
+  App.jsx
+  main.jsx
+
+🧩 Retos progresivos
+
+🟢 Nivel 1: Setup y navegación
+
+Inicializa proyecto con Vite o CRA
+
+Instala React Router DOM y configura rutas básicas:
+
+/ Inicio
+
+/login
+
+/register
+
+/jobs
+
+/jobs/:id
+
+/create-job
+
+🟡 Nivel 2: Usuarios (auth)
+
+Crea formularios de Login y Registro
+
+Conecta esos formularios con el backend usando Axios
+
+Almacena el token en localStorage
+
+Protege rutas con lógica de autenticación (ej. /create-job solo si estás logueado)
+
+Muestra errores si falla el login o registro
+
+🔵 Nivel 3: Vacantes
+
+Lista todas las vacantes con GET /api/jobs
+
+Muestra detalle de una vacante (GET /api/jobs/:id)
+
+Crea formulario para nueva vacante (POST, autenticado)
+
+Permite editar/eliminar vacantes propias
+
+🟣 Nivel 4: Mejoras
+
+Usa Context para manejar el usuario globalmente
+
+Usa Formik + Yup para validaciones limpias
+
+Agrega mensajes de éxito/error (ej. Toasts)
+
+Paginación o búsqueda de vacantes
 
 
 
