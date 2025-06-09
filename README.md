@@ -26,81 +26,82 @@ Postman
 
 
 
-📁 Estructura recomendada
+🧩 Nivel 1: Configuración base del backend
+ Inicializá un proyecto con npm init -y
 
-/src
-  /controllers
-  /routes
-  /models
-  /middleware
-  /config
-  app.js
-.env
+ Instalá dependencias: express, dotenv, cors, nodemon, etc.
 
+ Creá el archivo server.js que levanta el servidor
 
+ Creá app.js donde cargás middlewares y rutas
 
+ Configurá nodemon para desarrollo
 
-🧩 Retos progresivos
+ Armá estructura básica:
 
-🟢 Nivel 1: Base sólida
+    bash
+    Copiar
+    Editar
+    /backend
+    ├── server.js
+    ├── app.js
+    ├── .env
+    ├── /routes
+    ├── /db
+    
+    
+🧩 Nivel 2: Rutas y conexión a la base de datos
+ Conectá a MongoDB o una base de datos local en /db/index.js
 
-Inicializa proyecto con npm init y configura app.js
+ Creá ruta de prueba (/api/ping → "pong")
 
-Instala y configura Express, dotenv, cors
+ Creá archivo /routes/auth.js para login y registro
 
-Crea estructura de carpetas
+ Creá archivo /routes/users.js para gestionar usuarios
+ 
+ 
 
-Define rutas de prueba: GET /, GET /api/hello
+🧩 Nivel 3: Lógica de usuarios
+ Registro de usuarios con validaciones
 
+ Inicio de sesión (login) con email y contraseña
 
+ Usar bcrypt para encriptar contraseñas
 
-🟡 Nivel 2: Usuarios (auth)
+ Generar y devolver JWT al iniciar sesión
 
-Modelo de usuario
+ Crear carpeta /utils y archivo jwt.js
+ 
+ 
 
-Registro con validación y contraseña hasheada (bcrypt)
+🧩 Nivel 4: Seguridad y autenticación
+ Crear middleware auth.js para proteger rutas con JWT
 
-Login con JWT
+ Proteger rutas de usuarios (como GET /api/users)
 
-Ruta protegida con middleware JWT: GET /api/perfil
+ Crear carpeta /middlewares
+ 
+ 
 
+🧩 Nivel 5: CRUD de vacantes
+ Crear archivo /routes/jobs.js
 
+ CRUD: Crear, leer, actualizar y eliminar vacantes
 
-🔵 Nivel 3: Vacantes
+ Asociar vacante al usuario logueado
 
-Modelo de vacante
+ Agregar validaciones básicas
+ 
+ 
 
-CRUD de vacantes:
+🧩 Nivel 6: Mejora y organización
+ Separar lógica de rutas si crece mucho
 
-GET /api/jobs
+ Usar middlewares de error
 
-POST /api/jobs (protegido)
+ Validar entradas con express-validator
 
-Validaciones con express-validator
-
-
-
-🟣 Nivel 4: Mejoras
-
-Paginación y filtros
-
-Relación usuario ↔ vacante (quién la creó)
-
-PUT /api/jobs/:id y DELETE /api/jobs/:id (autenticado y autorizado)
-
-Middleware de errores
-
-
-
-✅ Bonus
-
-Subida de archivos (CV)
-
-Logging con Morgan
-
-Documentación Swagger
-
-.env bien usado
+ Cargar datos desde .env correctamente
 
 
 
