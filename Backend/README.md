@@ -142,102 +142,56 @@ Frontend de una plataforma de empleo donde los usuarios pueden registrarse, inic
 
 
 
-🧠 Tecnologías sugeridas
+🧩 Nivel 1: Configuración base del frontend
+ Crear proyecto con npm create vite@latest (React + JS)
 
-React (Vite o Create React App)
+ Instalar react-router-dom, axios, dotenv
 
-React Router DOM
+ Crear estructura inicial:
 
-Axios
+    
+    /frontend
+    ├── /src
+    │   ├── main.jsx
+    │   ├── App.jsx
+    │   ├── /pages
+    │   ├── /components
+    │   └── /services
+    └── .env
+    
+    
+🧩 Nivel 2: Navegación y rutas
+ Configurar react-router-dom
 
-Context API o Redux (opcional)
+ Crear rutas: Home, Login, Registro, Publicar Vacante
 
-Tailwind CSS (opcional para estilos rápidos)
+ Componentes base para cada página
+ 
+ 
 
-Formik + Yup (para formularios y validaciones)
+🧩 Nivel 3: Registro e inicio de sesión
+ Crear formulario de registro y login
 
+ Conectar a backend con axios
 
+ Almacenar token en localStorage
 
-📁 Estructura recomendada
+ Crear AuthContext para manejar sesión del usuario
+ 
+ 
 
-/src
-  /components
-  /pages
-  /services
-  /context
-  /hooks
-  /utils
-  App.jsx
-  main.jsx
+🧩 Nivel 4: Vacantes
+ Listar vacantes disponibles (fetch desde backend)
 
-  
+ Crear página para publicar vacante (si el usuario está logueado)
 
-🧩 Retos progresivos
+ Editar y eliminar tus propias vacantes
+ 
+ 
 
-🟢 Nivel 1: Setup y navegación
+🧩 Nivel 5: Protección y roles
+ Proteger rutas para que solo usuarios logueados publiquen
 
-Inicializa proyecto con Vite o CRA
+ Mostrar opciones según rol (admin, user)
 
-Instala React Router DOM y configura rutas básicas:
-
-/ Inicio
-
-/login
-
-/register
-
-/jobs
-
-/jobs/:id
-
-/create-job
-
-
-
-🟡 Nivel 2: Usuarios (auth)
-
-Crea formularios de Login y Registro
-
-Conecta esos formularios con el backend usando Axios
-
-Almacena el token en localStorage
-
-Protege rutas con lógica de autenticación (ej. /create-job solo si estás logueado)
-
-Muestra errores si falla el login o registro
-
-
-
-🔵 Nivel 3: Vacantes
-
-Lista todas las vacantes con GET /api/jobs
-
-Muestra detalle de una vacante (GET /api/jobs/:id)
-
-Crea formulario para nueva vacante (POST, autenticado)
-
-Permite editar/eliminar vacantes propias
-
-
-
-🟣 Nivel 4: Mejoras
-
-Usa Context para manejar el usuario globalmente
-
-Usa Formik + Yup para validaciones limpias
-
-Agrega mensajes de éxito/error (ej. Toasts)
-
-Paginación o búsqueda de vacantes
-
-
-
-✅ Reglas del equipo
-
-Usar ramas para todo (no trabajar directo en main)
-
-Pull Request antes de mergear
-
-Revisar código juntos
-
-Dejar commits claros
+ Agregar control de errores (respuestas del backend)
